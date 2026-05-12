@@ -1,0 +1,15 @@
+venv/
+.venv/
+env/
+
+# Caché de Python
+**/__pycache__/
+*.pyc
+
+# Docker y Git
+.git
+.gitignore
+dockerfile
+docker-compose.yml
+
+.env
