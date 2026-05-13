@@ -9,9 +9,9 @@ services:
     restart: always
 
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: 3118074248
-      POSTGRES_DB: glosas_db
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
 
     ports:
       - "5433:5432"
@@ -36,7 +36,7 @@ services:
       - ./BackEnd:/BackEnd
 
     env_file:
-      - ./BackEnd/.env
+      - ./.env
 
   frontend:
     build: ./FrontEnd
@@ -62,7 +62,7 @@ services:
       - /FrontEnd/node_modules
 
     env_file:
-      - ./FrontEnd/.env
+      - ./.env
 
 volumes:
   postgres_data:
